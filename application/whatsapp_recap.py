@@ -8,7 +8,7 @@ if __name__ == '__main__':
   except IndexError:
     print("give filepath as argument")
 
-  chat_data = generate_json_from_chat_data(file_path, 2023)
+  chat_data = generate_json_from_chat_data(file_path, 2023, android=False)
 
   image_title = "GROUP_CHAT_NAME"
   dv = DataVisualizer(chat_data, image_title)

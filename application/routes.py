@@ -11,16 +11,17 @@ def index():
 
 @app.route("/analyze", methods=["POST"])
 def analyze():
+  using_android = request.form.get("noora") != "on"
   target_year = int(request.form.get("year"))
   graph_title = request.form.get("title")
   chat_file = request.files.get("chatlog")
-
 
   chat_json = generate_json_from_chat_data(
     chat_file,
     target_year,
     from_filestorage=True,
-    export_json=False
+    export_json=False,
+    android=using_android,
   )
 
   dv = DataVisualizer(chat_json, image_title=graph_title)

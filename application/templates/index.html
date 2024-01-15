@@ -10,11 +10,13 @@
 
 <body>
   <h1>whatsapp_group_year_analyzer</h1>
-
   <div id="formDiv">
     <form method="POST" action="/analyze" enctype="multipart/form-data">
       <input type="text" id="title" name="title" placeholder="Graph title..."><br><br>
       <input type="number" id="year" name="year" placeholder="Year to analyze..."><br><br>
+      <input type="checkbox" id="noora" name="noora">
+      <label for="noora">Noora</label>
+      <h3>Export group chat without media</h3>
       <input type="file" id="chatlog" name="chatlog" accept=".txt"><br><br><br>
       <input type="submit" value="Submit">
     </form>  
