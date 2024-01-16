@@ -87,7 +87,7 @@ def parse_chat_ios(contents, year_to_recap):
     meta_string = split_rm[0]
     
     date = re.search(r"\d+\.\d+\.\d{4}", meta_string).group(0)
-    time = re.search(r"\d{2}\.\d{2}\.\d{2}", meta_string).group(0)
+    time = re.search(r"(\d{2}\.\d{2}\.\d{2})\]", meta_string).group(1)
     msg_data["datetime"] = datetime.strptime(f"{date} {time}", "%d.%m.%Y %H.%M.%S")
 
     if msg_data["datetime"].year != year_to_recap:
